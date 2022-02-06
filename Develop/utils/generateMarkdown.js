@@ -28,7 +28,9 @@ function renderLicenseSection(license) {
     return `
   ${section.Name} License  
   ![License: ${section.Name}]${section.Badge}  
-  ${section.Link}  `
+  ${section.Link}  
+  
+  `
   })
   return displaySection
 };
@@ -36,10 +38,32 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ## License
+${renderLicenseSection(data.licenses)}
+
+## Desciption
+${data.description}
+
+## Usage
+${data.usage}
+
+## Intallation
+${data.installation}
+
+## Testing
+${data.test}
+
+## Contribution
+${data.contribution}
+
+## Questions
+https://github.com/${date.username}
+
+${data.username}
 `;
 }
 
-//module.exports = generateMarkdown;
-console.log((renderLicenseSection(['Apache','Semi','Leaf','Sand','Rock','Sound','Cloud','Mist'])))
+module.exports = generateMarkdown;
+
 
 
